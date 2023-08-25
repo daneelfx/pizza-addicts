@@ -165,6 +165,10 @@ html{
         row-gap: 5vh;
     }
 
+    .main-title-container{
+        bottom: 30%;
+    }
+
 }
 
 /* For medium devices */
