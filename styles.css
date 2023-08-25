@@ -1,0 +1,203 @@
+:root{
+    --main-color: #000;
+    --secondary-color: #783203;
+    --main-background-color: #fff;
+}
+
+html{
+    box-sizing: border-box;
+    font-family: 'Lora', serif;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+.header{
+    height: 100vh;
+    background-image: url('images/oven.jpeg');
+    background-size: cover;
+    position: relative;;
+}
+
+.main-title-container{
+    padding: 2rem;
+    background-color: var(--main-background-color);
+    opacity: 0.9;
+    letter-spacing: -0.1rem;
+    position: absolute;
+    max-width: 80%;
+    bottom: 10%;
+}
+
+.main-title-container--title{
+    font-size: 5rem;
+    line-height: 1;
+    animation: main-title-color-strenght 2s infinite;
+}
+
+.main-title-container--go-menu:link, .main-title-container--go-menu:visited{
+    text-transform: uppercase;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    letter-spacing: 0.06rem;
+    text-decoration: none;
+    font-weight: 800;
+    padding: 0.6rem 0.4rem;
+    transform: translate(30%, 30%);
+    cursor: pointer;
+    color: var(--main-background-color);
+    background-color: var(--main-color);
+    animation: go-menu-scaling 2s;
+}
+
+.main-title-container--go-menu:hover, .main-title-container--go-menu:active{
+    transform: scale(1.1) translate(30%, 30%);
+    transition: all 0.6s;
+}
+
+.menu-title{
+    font-size: 4.5rem;
+    text-align: center;
+    padding: 4vh 0;
+}
+
+.go-menu{
+    position: absolute;
+}
+
+.menu{
+    margin-bottom: 5vh;
+}
+
+.menu__list{
+    display: grid;
+    background-color: var(--main-background-color);
+    width: 90%;
+    margin: 0 auto;
+    gap: 5vh;
+    list-style: none;
+    justify-content: center;
+}
+
+.menu__item{
+    background-color: var(--main-background-color);
+    position: relative;
+}
+
+.menu__item--info{
+    position: absolute;
+    right: 50%;
+    bottom: 0;
+    background: linear-gradient(to right, var(--main-background-color), rgba(200, 200, 200, 0.8));
+    border-left: 0.2rem solid var(--main-color);
+    border-bottom: 0.2rem solid var(--main-color);
+    transform: translate(50%, 30%);
+    width: 80%;
+    padding: 0.4rem 0.8rem;
+    box-shadow:-0.2rem 0.2rem 1rem 0.1rem rgba(0, 0, 0, 0.4);
+    transition: all 0.6s;
+}
+
+.menu__item--info:hover{
+    transform: scale(1.2, 1.1) translate(50%, 30%);
+    background: linear-gradient(to right, var(--main-color), rgba(55, 55, 55, 0.8));
+    color: var(--main-background-color);
+}
+
+.menu__item--title{
+    display: inline-block;
+    font-size: 1.4rem;
+    border-bottom: 0.1rem solid var(--main-color);
+    margin-bottom: 0.8rem;
+}
+
+.menu__item--description{
+    font-size: 0.8rem;
+}
+
+
+.menu__item--img{
+   width: 100%;
+}
+
+.footer{
+    text-align: center;
+    background-color: var(--main-color);
+    color: var(--main-background-color);
+    padding: 1rem 0;
+}
+
+@keyframes main-title-color-strenght {
+    0% {
+        color: var(--main-color);
+    }
+
+    50%{
+        color: var(--secondary-color);
+    }
+
+    100% {
+        color: var(--main-color);
+    }
+}
+
+@keyframes go-menu-scaling {
+    0% {
+        transform: scale(2);;
+    }
+
+    100%{
+        transform: scale(1) translate(30%, 30%);
+    }
+}
+
+@media (max-width: 576px) {
+    /* small screens */
+    .menu-title, .main-title-container--title{
+        font-size: 2.5rem;
+    }
+
+    .menu__list{
+        row-gap: 5vh;
+    }
+
+}
+
+/* For medium devices */
+@media (min-width: 577px) and (max-width: 768px) {
+    /* medium screens */
+    .menu-title, .main-title-container--title{
+        font-size: 3.5rem;
+    }
+
+    .menu__list{
+        row-gap: 5vh;
+    }
+}
+
+/* For large devices */
+@media (min-width: 769px) and (max-width: 992px) {
+    /* large screens */
+
+    .menu-title, .main-title-container--title{
+        font-size: 4rem;
+    }
+
+    .menu__list{
+        row-gap: 5vh;
+    }
+}
+
+/* For extra-large devices */
+@media (min-width: 993px) {
+    /* extra-large screens */
+
+    .menu__list{
+        grid-template-columns: repeat(3, 30%);
+        grid-template-rows: repeat(3, calc(100vw * 0.9 * 0.3));
+    }
+}
